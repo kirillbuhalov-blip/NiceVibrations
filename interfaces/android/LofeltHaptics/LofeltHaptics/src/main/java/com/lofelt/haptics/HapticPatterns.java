@@ -20,6 +20,11 @@ public class HapticPatterns {
 
     final private Vibrator vibrator;
 
+    /**
+     * Constructs a new HapticPatterns instance.
+     *
+     * @param context The application context used to access the vibrator service
+     */
     public HapticPatterns(Context context) {
         this.vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
     }
@@ -27,9 +32,8 @@ public class HapticPatterns {
     /**
      * Plays back a pattern of on/off vibrations with the maximum amplitude.
      * <p>
-     * Can be used as a fallback for Android versions that don't support the minimum requirements,
+     * Can be used as a fallback for Android versions that don't support the minimum requirements
      * of LofeltHaptics.
-     * <p>
      *
      * @param patternPoints Each value represents a point in time. Two adjacent points define the
      *                      duration in seconds of turning the vibration motor on/off. The first 2
